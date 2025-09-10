@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+</head>
+<body>
+  <header>
+    <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+    <p>{{ site.description }}</p>
+    <nav>
+      <a href="{{ '/' | relative_url }}">Home</a>
+      <a href="{{ '/cv' | relative_url }}">CV</a>
+      <a href="{{ '/projects' | relative_url }}">Projects</a>
+      <a href="{{ '/blog' | relative_url }}">Blog</a>
+    </nav>
+  </header>
+
+  <main>
+    {{ content }}
+  </main>
+
+  <footer>
+    <p>© {{ site.time | date: '%Y' }} {{ site.title }} |
+       Contact: <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+  </footer>
+</body>
+</html>

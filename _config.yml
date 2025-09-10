@@ -1,0 +1,8 @@
+title: "Prasad Neth"
+email: "your@email.com"
+description: "PhD Student | Robotics & AI | Point Clouds | Digital Twins"
+baseurl: ""
+url: "https://nethpras.github.io"
+
+# Use your own stylesheet
+markdown: kramdown
