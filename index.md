@@ -72,10 +72,14 @@ permalink: /
       (Or we can embed YouTube later for faster loading.)
     </div>
 
-    <div class="card-actions">
-      <a class="btn" href="/projects/">Details</a>
-      <a class="btn" href="mailto:your@email.com">Ask for demo</a>
-    </div>
+    <img class="avatar" src="/images/profile.jpg" alt="Profile photo">
+    <p class="small" style="margin-top:10px;">
+      <a href="{{ site.social.github }}" target="_blank" rel="noopener">GitHub</a>
+      {% if site.social.linkedin and site.social.linkedin != "" %} •
+      <a href="{{ site.social.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
+  {% endif %}
+</p>
+
   </div>
 
 </div>
