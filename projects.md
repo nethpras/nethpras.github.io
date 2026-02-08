@@ -6,9 +6,7 @@ permalink: /projects/
 
 # Projects
 
-<p class="small-note">
-Each project: <b>Problem → Approach → Result → Demo → Links</b>.
-</p>
+<p class="small">Format: <b>Problem → Approach → Result → Demo → Links</b></p>
 
 <div class="grid">
 
@@ -18,9 +16,9 @@ Each project: <b>Problem → Approach → Result → Demo → Links</b>.
 
     <p><b>Problem:</b> Organ-level understanding from plant scans.</p>
     <p><b>Approach:</b> Capture + filtering + annotation + structure extraction.</p>
-    <p><b>Result:</b> Clean organ-level outputs + phenotype metrics (angles/lengths/volume).</p>
+    <p><b>Result:</b> Clean organ-level outputs + phenotype metrics.</p>
 
-    <p><img src="/images/pointcloud.gif" alt="pointcloud demo"></p>
+    <div class="media">Add GIF: <code>images/pointcloud.gif</code></div>
 
     <div class="card-actions">
       <a class="btn" href="https://github.com/nethpras" target="_blank" rel="noopener">GitHub</a>
@@ -32,26 +30,11 @@ Each project: <b>Problem → Approach → Result → Demo → Links</b>.
     <h3>Robotic Pruner Demo</h3>
     <div class="meta">Arduino • motion control • safety</div>
 
-    <p><b>Problem:</b> Reliable actuation for pruning actions.</p>
-    <p><b>Approach:</b> Control logic + limit checks + repeatable step motion.</p>
-    <p><b>Result:</b> Consistent tool strokes and safer operation.</p>
+    <p><b>Problem:</b> Reliable actuation for pruning.</p>
+    <p><b>Approach:</b> Control logic + safety checks.</p>
+    <p><b>Result:</b> Consistent actuation and safer operation.</p>
 
-    <video controls>
-      <source src="/videos/demo.mp4" type="video/mp4">
-    </video>
-
-    <div class="card-actions">
-      <a class="btn" href="mailto:your@email.com">Request full demo</a>
-    </div>
+    <div class="media">Add MP4: <code>videos/demo.mp4</code> (or YouTube embed)</div>
   </div>
 
 </div>
-
-<hr>
-
-## Add a new project
-Copy one `<div class="card"> ... </div>` block, change:
-- title
-- problem/approach/result
-- demo (image/gif/video)
-- GitHub link
