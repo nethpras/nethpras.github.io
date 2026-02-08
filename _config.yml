@@ -1,8 +1,17 @@
-title: "Prasad Neth"
-email: "your@email.com"
-description: "PhD Student | Robotics & AI | Point Clouds | Digital Twins"
+title: "Prasad Nethala"
+email: "prasad.neth@gmail.com"
+description: "PhD Student | Robotics & ML | Point Clouds | Digital Twins"
 baseurl: ""
 url: "https://nethpras.github.io"
 
 # Use your own stylesheet
 markdown: kramdown
+permalink: pretty
+timezone: America/Chicago
+
+# Optional social links (edit later)
+social:
+  github: "https://github.com/nethpras"
+  # linkedin: ""
+  # scholar: ""
+  # youtube: ""

@@ -1,29 +1,53 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>{{ page.title }} | {{ site.title }}</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>{{ page.title }} · {{ site.title }}</title>
+  <meta name="description" content="{{ page.excerpt | strip_html | strip_newlines | truncate: 160 | default: site.description }}" />
+
   <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
 </head>
+
 <body>
-  <header>
-    <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
-    <p>{{ site.description }}</p>
-    <nav>
-      <a href="{{ '/' | relative_url }}">Home</a>
-      <a href="{{ '/cv' | relative_url }}">CV</a>
-      <a href="{{ '/projects' | relative_url }}">Projects</a>
-      <a href="{{ '/blog' | relative_url }}">Blog</a>
-    </nav>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="{{ '/' | relative_url }}">
+        <div class="brand-name">{{ site.title }}</div>
+        <div class="brand-tagline">{{ site.description }}</div>
+      </a>
+
+      <nav class="nav">
+        {% assign u = page.url %}
+        <a class="nav-link {% if u == '/' %}active{% endif %}" href="{{ '/' | relative_url }}">Home</a>
+        <a class="nav-link {% if u contains '/projects' %}active{% endif %}" href="{{ '/projects/' | relative_url }}">Projects</a>
+        <a class="nav-link {% if u contains '/blog' %}active{% endif %}" href="{{ '/blog/' | relative_url }}">Blog</a>
+        <a class="nav-link {% if u contains '/cv' %}active{% endif %}" href="{{ '/cv/' | relative_url }}">CV</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    {{ content }}
+  <main id="content" class="container">
+    <div class="page-card">
+      {{ content }}
+    </div>
   </main>
 
-  <footer>
-    <p>© {{ site.time | date: '%Y' }} {{ site.title }} |
-       Contact: <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">© {{ site.time | date: '%Y' }} {{ site.title }}</div>
+      <div class="footer-right">
+        <a href="mailto:{{ site.email }}">Email</a>
+        {% if site.social.github and site.social.github != "" %}<a href="{{ site.social.github }}" target="_blank" rel="noopener">GitHub</a>{% endif %}
+        {% if site.social.linkedin and site.social.linkedin != "" %}<a href="{{ site.social.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>{% endif %}
+        {% if site.social.scholar and site.social.scholar != "" %}<a href="{{ site.social.scholar }}" target="_blank" rel="noopener">Scholar</a>{% endif %}
+        {% if site.social.youtube and site.social.youtube != "" %}<a href="{{ site.social.youtube }}" target="_blank" rel="noopener">YouTube</a>{% endif %}
+      </div>
+    </div>
   </footer>
 </body>
 </html>
