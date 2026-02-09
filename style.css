@@ -1,11 +1,10 @@
 :root{
-  --bg:     #F8F0E8;  /* page background */
-  --paper:  #FFFFFF;  /* card background */
-  --soft:   #F8F8F8;  /* subtle sections */
-  --border: #E8D0B8;  /* borders/chips */
-  --muted:  #9B9188;  /* secondary text */
-  --ink:    #6F645B;  /* headings/links */
-  --text:   #2F2B27;  /* main text */
+  --bg:     #F6EEE6;  /* linen background */
+  --paper:  #FFF7F1;  /* warm card surface */
+  --border: #E4CFAE;  /* warm tan */
+  --muted:  #8F857B;  /* stronger muted */
+  --ink:    #665C53;  /* deeper headings */
+  --text:   #262220;  /* crisp readable text */
 }
 
 
@@ -13,7 +12,7 @@
 html,body{margin:0;padding:0}
 body{
   background: radial-gradient(1200px 700px at 15% 0%,
-              rgba(232,208,184,.35), transparent 60%),
+              rgba(228,207,174,.33), transparent 60%),
               var(--bg);
 }
 
