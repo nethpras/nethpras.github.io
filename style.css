@@ -19,7 +19,7 @@ html,body{margin:0;padding:0}
 body{
   background:
     radial-gradient(900px 520px at 18% 0%,
-      rgba(255, 204, 170, 0.22), transparent 60%),
+      rgba(255, 204, 170, 0.28), transparent 60%),
     radial-gradient(900px 520px at 85% 10%,
       rgba(220, 235, 255, 0.14), transparent 55%),
     var(--bg);
