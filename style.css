@@ -1,24 +1,22 @@
 :root{
-  --bg: #FAF4F0;        /* warm background */
-  --paper: #FFF9F6;     /* page surface */
-  --border: #ECDEB5;    /* soft accent border */
-  --muted: #A79D94;     /* muted text */
-  --ink: #736B60;       /* headings/links */
-  --text: #2F2B27;      /* main text */
-
-  --radius: 18px;
-  --shadow: 0 10px 30px rgba(0,0,0,.06);
-  --maxw: 980px;
+  --bg:     #F8F0E8;  /* page background */
+  --paper:  #FFFFFF;  /* card background */
+  --soft:   #F8F8F8;  /* subtle sections */
+  --border: #E8D0B8;  /* borders/chips */
+  --muted:  #9B9188;  /* secondary text */
+  --ink:    #6F645B;  /* headings/links */
+  --text:   #2F2B27;  /* main text */
 }
+
 
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
 body{
-  background: var(--bg);
-  color: var(--text);
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-  line-height: 1.65;
+  background: radial-gradient(1200px 700px at 15% 0%,
+              rgba(232,208,184,.35), transparent 60%),
+              var(--bg);
 }
+
 
 /* layout */
 .container{max-width:var(--maxw);margin:0 auto;padding:18px}
