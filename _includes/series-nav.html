@@ -1,0 +1,32 @@
+{% assign series_posts = site.posts | where: "series", page.series | sort: "series_order" %}
+
+{% assign prev_post = nil %}
+{% assign next_post = nil %}
+{% assign found = false %}
+{% assign last = nil %}
+
+{% for p in series_posts %}
+  {% if p.url == page.url %}
+    {% assign prev_post = last %}
+    {% assign found = true %}
+  {% elsif found and next_post == nil %}
+    {% assign next_post = p %}
+  {% endif %}
+  {% assign last = p %}
+{% endfor %}
+
+<div class="card" style="margin-top:18px">
+  <div class="meta">Series: {{ page.series_title }}</div>
+
+  <div class="card-actions" style="margin-top:10px">
+    {% if prev_post %}
+      <a class="btn" href="{{ prev_post.url | relative_url }}">← Previous</a>
+    {% endif %}
+
+    <a class="btn" href="/series/tomato-anatomy/">All posts in series</a>
+
+    {% if next_post %}
+      <a class="btn" href="{{ next_post.url | relative_url }}">Next →</a>
+    {% endif %}
+  </div>
+</div>
