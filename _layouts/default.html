@@ -3,42 +3,44 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{{ page.title }} · {{ site.title }}</title>
+  <title>{% if page.title and page.title != "Home" %}{{ page.title }} · {% endif %}{{ site.title }}</title>
   <meta name="description" content="{{ site.description }}" />
-
-  <!-- cache-bust so GitHub Pages updates CSS immediately -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 </head>
 
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="{{ '/' | relative_url }}">
-        <div class="brand-name">{{ site.title }}</div>
-        <div class="brand-tagline">{{ site.description }}</div>
-      </a>
-
-      <nav class="nav">
-        <a class="nav-link {% if page.url == '/' %}active{% endif %}" href="{{ '/' | relative_url }}">Home</a>
-        <a class="nav-link {% if page.url contains '/projects' %}active{% endif %}" href="{{ '/projects/' | relative_url }}">Projects</a>
-        <a class="nav-link {% if page.url contains '/blog' %}active{% endif %}" href="{{ '/blog/' | relative_url }}">Blog</a>
-        <a class="nav-link {% if page.url contains '/cv' %}active{% endif %}" href="{{ '/cv/' | relative_url }}">CV</a>
+      <a class="brand" href="{{ '/' | relative_url }}">Prasad Nethala</a>
+      <nav class="nav" aria-label="Main">
+        <a href="{{ '/#research' | relative_url }}">Research</a>
+        <a href="{{ '/#projects' | relative_url }}">Projects</a>
+        <a href="{{ '/#publications' | relative_url }}">Publications</a>
+        <a href="{{ '/#experience' | relative_url }}">Experience</a>
+        <a href="{{ '/blog/' | relative_url }}">Writing</a>
+        <a class="nav-cv" href="{{ '/files/Prasad_Nethala_CV.pdf' | relative_url }}">CV</a>
       </nav>
     </div>
   </header>
 
   <main class="container">
-    <div class="paper">
+    {% if page.url == "/" %}
       {{ content }}
-    </div>
+    {% else %}
+      <div class="paper">{{ content }}</div>
+    {% endif %}
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <div>© {{ site.time | date: '%Y' }} {{ site.title }}</div>
+      <div>© {{ site.time | date: '%Y' }} Prasad Nethala</div>
       <div class="footer-links">
         <a href="mailto:{{ site.email }}">Email</a>
         {% if site.social.github %}<a href="{{ site.social.github }}" target="_blank" rel="noopener">GitHub</a>{% endif %}
+        {% if site.social.scholar %}<a href="{{ site.social.scholar }}" target="_blank" rel="noopener">Google Scholar</a>{% endif %}
         {% if site.social.linkedin %}<a href="{{ site.social.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>{% endif %}
       </div>
     </div>

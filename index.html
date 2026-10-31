@@ -1,0 +1,192 @@
+---
+layout: default
+title: "Home"
+permalink: /
+---
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="about">
+  <div>
+    <h1>Prasad Nethala</h1>
+    <p class="role">PhD Candidate, Geospatial Computer Science · Texas A&amp;M University–Corpus Christi</p>
+    <p class="lead">
+      I build robots and 3D perception systems for one of the hardest objects a robot can face: a growing plant.
+      My research turns point clouds into <b>persistent plant digital twins</b>, organ graphs that repair what a
+      robot cannot see and carry memory from one visit to the next.
+    </p>
+    <div class="seeking">Seeking Summer 2027 research internships · Robotics · 3D Perception · Physical AI</div>
+    <div class="actions">
+      <a class="btn primary" href="{{ '/files/Prasad_Nethala_CV.pdf' | relative_url }}">Download CV</a>
+      <a class="btn" href="mailto:{{ site.email }}">Email</a>
+      <a class="btn" href="{{ site.social.github }}" target="_blank" rel="noopener">GitHub</a>
+      {% if site.social.scholar %}<a class="btn" href="{{ site.social.scholar }}" target="_blank" rel="noopener">Google Scholar</a>{% endif %}
+      {% if site.social.linkedin %}<a class="btn" href="{{ site.social.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>{% endif %}
+    </div>
+    <div class="chips">
+      <span class="chip">3D point clouds</span>
+      <span class="chip">Graph neural networks</span>
+      <span class="chip">Digital twins</span>
+      <span class="chip">ROS</span>
+      <span class="chip">NVIDIA Jetson Orin</span>
+      <span class="chip">Isaac Sim</span>
+      <span class="chip">PyTorch</span>
+    </div>
+  </div>
+  <div class="photo">
+    <!-- To show your photo: save it as images/profile.jpg. Until then, your initials are shown. -->
+    <img src="{{ '/images/profile.jpg' | relative_url }}" alt="Prasad Nethala" onerror="this.remove()">
+    <div class="initials" aria-hidden="true">PN</div>
+  </div>
+</section>
+
+<!-- ============ NEWS ============ -->
+<section id="news">
+  <h2>News</h2>
+  <ul class="news">
+    <li><span class="when">2026</span>Collected a new 13-plant, four-cultivar time series, scanned three times a week for about 2.5 months, for graph-repair research.</li>
+    <li><span class="when">2026</span>Published the <b>TomatoPGT</b> 3D tomato-plant dataset in <i>Data in Brief</i> and released the CloudSeg and CloudGraph tools.</li>
+    <li><span class="when">2025</span>Presented single-LiDAR calibration of a 3-axis harvesting robot at <i>Ubiquitous Robots (UR 2025)</i>.</li>
+    <li><span class="when">2024</span>Published a survey and experiments on canopy-to-organ plant feature extraction in <i>Remote Sensing</i>.</li>
+  </ul>
+</section>
+
+<!-- ============ RESEARCH ============ -->
+<section id="research">
+  <h2>Research</h2>
+  <div class="research-box">
+    <h3>Persistent plant digital twins via graph memory</h3>
+    <p>
+      Robots that prune or harvest need a plant's <b>structure</b>: which stem carries which leaf, sucker or fruit.
+      But plants are thin, self-occluding and always growing, so every scan is incomplete, and one missed junction
+      detaches a whole branch. I represent each plant as a semantic <b>organ graph</b> and train graph neural networks
+      to repair missing structure, using the repaired graph from the previous visit as memory.
+    </p>
+    <p>
+      The plant is not the endpoint of the method; it is a challenging deformable, self-occluding physical system for
+      studying structured 3D/4D perception under partial observation, a core problem for Physical AI.
+    </p>
+    <figure class="figure">
+      <img src="{{ '/images/graph-memory-pipeline.png' | relative_url }}" alt="Pipeline: graph twins, occlusion simulation, partial graph, graph repair GNN, repaired graph used as memory for the next scan">
+      <figcaption>Complete graph twins give exact ground truth; a simulated occlusion or real field scan gives a partial graph; the GNN repairs it, and the repaired twin becomes memory for the next scan.</figcaption>
+    </figure>
+    <div class="rq">
+      <div><b>RQ1 · Structural repair.</b> Can topology-aware graph reasoning rebuild a valid plant twin from partial 3D scans better than geometry-only skeletonization?</div>
+      <div><b>RQ2 · Living twin.</b> Does memory of the previous twin improve repair, especially where occlusion is heaviest and plants are most complex?</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="grid">
+
+    <article class="card">
+      <!-- To add a picture: save it as images/tomatopgt.gif (or .jpg) and remove the two comment marks around the next line. -->
+      <!-- <div class="card-media"><img src="{{ '/images/tomatopgt.gif' | relative_url }}" alt="TomatoPGT point cloud"></div> -->
+      <span class="status done">Published · 2026</span>
+      <h3>TomatoPGT dataset and tools</h3>
+      <div class="tags">Structure-from-motion · organ segmentation · plant graphs</div>
+      <p>42 annotated 3D point clouds of tomato plants from three cultivars, scanned over 3 months with a turntable photo booth.
+         Organ-level labels, plant graphs and trait tables, plus open tools: <b>CloudSeg</b> for organ segmentation and
+         <b>CloudGraph</b> for point cloud to plant graph.</p>
+      <div class="links">
+        <a href="https://doi.org/10.17632/72md54c7n7.1" target="_blank" rel="noopener">Dataset →</a>
+        <a href="https://doi.org/10.5281/zenodo.18651881" target="_blank" rel="noopener">Code →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <span class="status wip">In progress</span>
+      <h3>Graph-repair GNN for occluded plants</h3>
+      <div class="tags">Graph transformers · PyTorch Geometric · GPU training</div>
+      <p>Graph-transformer GNNs trained to recover removed organs, missing connections and rewired edges, including
+         3D node positions. The pilot pipeline works end to end; evaluation on the new 13-plant dataset and a temporal
+         version that uses the previous growth stage are next.</p>
+    </article>
+
+    <article class="card">
+      <span class="status done">Published · UR 2025</span>
+      <h3>Hydroponic harvesting robot</h3>
+      <div class="tags">Fusion 360 · electronics · ROS · LiDAR calibration</div>
+      <p>Designed and built a linear-rail harvesting robot end to end: mechanics, electronics and ROS software.
+         Calibrated its 3-axis arm using a single LiDAR camera.</p>
+    </article>
+
+    <article class="card">
+      <span class="status wip">In progress</span>
+      <h3>Amiga mobile photo booth</h3>
+      <div class="tags">farm-ng Amiga · navigation · field 3D capture · Jetson Orin</div>
+      <p>Converting a farm-ng Amiga robot into a semi-autonomous photo booth that navigates crop rows and captures
+         plant point clouds in the field, to bring digital twins from the lab to the farm.</p>
+    </article>
+
+    <article class="card">
+      <span class="status done">Published · AI 2022</span>
+      <h3>Hierarchical DDPG for motion planning</h3>
+      <div class="tags">Reinforcement learning · manipulator planning · moving obstacles</div>
+      <p>Implemented and trained Hierarchical DDPG, where a manager agent switches between goal-reaching and
+         collision-avoidance workers. It achieved 38% higher reward and 2× faster learning than single-agent DDPG.</p>
+      <div class="links">
+        <a href="https://doi.org/10.3390/ai3030037" target="_blank" rel="noopener">Paper →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <span class="status done">Presented · 2024</span>
+      <h3>Plant scene graphs for robotic pruning</h3>
+      <div class="tags">Scene graphs · organ relations · pruning</div>
+      <p>Built organ-level scene graphs (organs and their spatial relations) from point clouds to guide robotic
+         pruning decisions. Presented at ASA 2024 and AI in Agriculture 2024.</p>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============ PUBLICATIONS ============ -->
+<section id="publications">
+  <h2>Publications</h2>
+  <ul class="pubs">
+    <li><span class="me">Nethala, P.</span>, et al. (2026). TomatoPGT: A 3D point cloud dataset of tomato plants for segmentation and plant-trait extraction. <span class="venue">Data in Brief</span>, 112642.
+      <span class="plinks"><a href="https://doi.org/10.17632/72md54c7n7.1" target="_blank" rel="noopener">Dataset</a><a href="https://doi.org/10.5281/zenodo.18651881" target="_blank" rel="noopener">Code</a></span></li>
+    <li><span class="me">Nethala, P.</span>, et al. (2025). Calibration of a three-axis robot manipulator with a single LiDAR camera for indoor hydroponic system. <span class="venue">Ubiquitous Robots (UR 2025)</span>.</li>
+    <li><span class="me">Nethala, P.</span>, Um, D., Vemula, N., Montero, O. F., Lee, K., &amp; Bhandari, M. (2024). Techniques for canopy to organ level plant feature extraction via remote and proximal sensing: A survey and experiments. <span class="venue">Remote Sensing</span>, 16(23), 4370.
+      <span class="plinks"><a href="https://doi.org/10.3390/rs16234370" target="_blank" rel="noopener">Paper</a></span></li>
+    <li>Um, D., <span class="me">Nethala, P.</span>, &amp; Shin, H. (2022). Hierarchical DDPG for manipulator motion planning in dynamic environments. <span class="venue">AI</span>, 3(3), 645–658.
+      <span class="plinks"><a href="https://doi.org/10.3390/ai3030037" target="_blank" rel="noopener">Paper</a></span></li>
+  </ul>
+</section>
+
+<!-- ============ EXPERIENCE + SKILLS ============ -->
+<section id="experience">
+  <h2>Experience and skills</h2>
+  <div class="two-col">
+    <ul class="timeline">
+      <li><div class="when">2023 – present (expected 2028)</div><div class="what">PhD, Geospatial Computer Science</div><div class="where">Texas A&amp;M University–Corpus Christi · Graduate research and teaching assistant</div></li>
+      <li><div class="when">2024 – present</div><div class="what">Research collaborator</div><div class="where">Texas A&amp;M AgriLife Research &amp; Extension Center, Corpus Christi</div></li>
+      <li><div class="when">2021 – 2023</div><div class="what">M.S., Geospatial Science</div><div class="where">Texas A&amp;M University–Corpus Christi · Hierarchical RL for robot motion planning</div></li>
+      <li><div class="when">2020 – 2021</div><div class="what">Research assistant</div><div class="where">Machine Learning &amp; Intelligence Lab, University of Louisville · Human–robot interaction study</div></li>
+      <li><div class="when">2019</div><div class="what">M.S., Computer Science</div><div class="where">Texas A&amp;M University–Kingsville</div></li>
+      <li><div class="when">2009 – 2015</div><div class="what">Assistant engineer</div><div class="where">Parameshwari Power Projects, India · Switchyard and power-line installation</div></li>
+    </ul>
+    <dl class="skills">
+      <dt>Languages</dt><dd>Python, C++</dd>
+      <dt>Machine learning</dt><dd>PyTorch, PyTorch Geometric, graph neural networks, reinforcement learning</dd>
+      <dt>3D vision</dt><dd>Open3D, OpenCV, structure-from-motion, photogrammetry, LiDAR–camera calibration</dd>
+      <dt>Robotics</dt><dd>ROS, NVIDIA Isaac Sim, Gazebo, Jetson Orin, farm-ng Amiga, Fusion 360</dd>
+      <dt>Geospatial</dt><dd>ArcGIS Pro, remote sensing, UAV and proximal sensing</dd>
+    </dl>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact">
+  <div class="contact">
+    <h2>Let's talk</h2>
+    <p>I'm looking for Summer 2027 research internships in robotics, 3D perception and Physical AI.</p>
+    <div class="actions" style="justify-content:center">
+      <a class="btn primary" href="mailto:{{ site.email }}">{{ site.email }}</a>
+      <a class="btn" href="{{ '/files/Prasad_Nethala_CV.pdf' | relative_url }}">Download CV</a>
+    </div>
+  </div>
+</section>

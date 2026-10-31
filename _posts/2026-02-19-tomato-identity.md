@@ -13,16 +13,16 @@ tags: [botany, taxonomy, history]
 
 Tomatoes have had an identity crisis for centuries. Botanically, they’re fruits. In the kitchen, they’re vegetables. And in **1893**, U.S. tariff law made it official: the Supreme Court ruled the tomato should be treated as a **vegetable** because that’s how people commonly use it. ([Justia Law][1])
 
-![Tomato hero](asserts\img\c-style-tomato-4630_512.gif)
+![Tomato hero](/asserts/img/c-style-tomato-4630_512.gif)
 <table>
   <tr>
     <td align="center">
         <h4>clodgraph Graph Extraction</h4>
-        <img src="asserts\img\c-style-tomato-4630_512.gif" width="350px" alt="Graph Extraction GIF">
+        <img src="/asserts/img/c-style-tomato-4630_512.gif" width="350px" alt="Graph Extraction GIF">
     </td>
     <td align="center">
         <h4>clodgraph Phenotype Extraction</h4>
-        <img src="asserts\img\c-style-tomato-4630_512.gif" width="350px" alt="Phenotype Extraction GIF">
+        <img src="/asserts/img/c-style-tomato-4630_512.gif" width="350px" alt="Phenotype Extraction GIF">
     </td>
   </tr>
 </table>

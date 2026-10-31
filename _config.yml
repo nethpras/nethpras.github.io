@@ -1,17 +1,19 @@
 title: "Prasad Nethala"
-email: "prasad.neth@gmail.com"
-description: "PhD Student | Robotics & ML | Point Clouds | Digital Twins"
+email: "nethpras@gmail.com"
+description: "PhD candidate in robotics and 3D perception: persistent plant digital twins, graph neural networks and field robots."
 baseurl: ""
 url: "https://nethpras.github.io"
 
-# Use your own stylesheet
 markdown: kramdown
 permalink: pretty
 timezone: America/Chicago
 
-# Optional social links (edit later)
+# Links shown in the header buttons and footer.
+# To add one, remove the "#" at the start of the line and paste your link.
 social:
   github: "https://github.com/nethpras"
-  # linkedin: ""
-  # scholar: ""
-  # youtube: ""
+  # linkedin: "https://www.linkedin.com/in/YOUR-NAME/"
+  # scholar: "https://scholar.google.com/citations?user=YOUR-ID"
+
+exclude:
+  - _archive
